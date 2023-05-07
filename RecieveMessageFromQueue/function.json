@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "name": "mySbMsg",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "rng-queue",
+      "connection": "seng4400a2_SERVICEBUS"
+    }
+  ],
+  "scriptFile": "../dist/RecieveMessageFromQueue/index.js"
+}
