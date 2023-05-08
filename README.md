@@ -16,10 +16,12 @@ Part 2 - The Client (3 marks)
 - Code for this portion is found within RecieveMessageFromQueue/index.ts 
 
 RUNNING AZURE FUNCTIONS LOCALLY: 
-1. run npm install
-2. This solution requires ASB for the pub/sub queue, and there is no officially supported emulator for ASB. For this reason this solution cannot be truely 'local'. The connection string is defined in the local.settings.json under seng4400a2_SERVICEBUS and seng4400a2_TOPIC_NAME. You are welcome to use the existing service bus, or create your own and replace these parameters. 
+1. This solution requires ASB for the pub/sub queue, and there is no officially supported emulator for ASB. For this reason this solution cannot be truely 'local'. The connection string is defined in the local.settings.json under seng4400a2_SERVICEBUS and seng4400a2_TOPIC_NAME. You are welcome to use the existing service bus, or create your own and replace these parameters. 
+2. Fortunately/Unfortunately Azure functions have great integration with Visual Studio Code, and not much else. Download the Azure extension in VSCode. The extension should automatically detect that you are trying to run an Azure function. 
+3. Install Azure Functions Core Tools v 2.x or later. VSCode should prompt you to download it, if it not it is available here: https://github.com/Azure/azure-functions-core-tools
+4. run npm install
+5. There is a chance you will be prompted to setup a storage solution, in which just select the local emulator.
+6. Simply press F5 on either of the index.ts files and both the Reciever and Sender functions will start.  You should be able to see the output in the terminal that opens. Alternatively you can run the command 'func start' in the console. 
 
-3. Fortunately/Unfortunately Azure functions have great integration with Visual Studio Code, and not much else. Download the Azure extension in VSCode. The extension should automatically detect that you are trying to run an Azure function. Simply press F5 on either of the index.ts files and both the Reciever and Sender functions will start. You may prompted to setup a storage solution, in which just select the local emulator. You should be able to see the output in the terminal that opens. Alternatively you can run the command 'func start' in the console. 
-
-There is also a JetBrains plugin, but I haven't tested it, your mileage may vary 
+There is also a JetBrains plugin, but I haven't tested it, your mileage may vary. 
 
