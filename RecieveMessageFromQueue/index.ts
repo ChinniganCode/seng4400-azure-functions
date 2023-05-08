@@ -21,17 +21,16 @@ function calculatePrimes(max): number[] {
   }
 
 const serviceBusQueueTrigger: AzureFunction = async function(context: Context, mySbMsg: any): Promise<void> {
-
   //start timer
-    var hrStart = process.hrtime()
+    var hrStart = process.hrtime.bigint()
     context.log(mySbMsg);
     const ans = calculatePrimes(mySbMsg.question);
   //end timer
-    var hrEnd = process.hrtime(hrStart);
+    var hrEnd = process.hrtime.bigint();
     const payload = 
     {
         answer: ans,
-        time_taken: Math.floor(hrEnd[1] / 1000000)
+        time_taken: Math.round(Number(hrEnd - hrStart) / 1000000)
     }
     context.log(payload);
     const options = {

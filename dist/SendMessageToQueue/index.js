@@ -17,10 +17,10 @@ const TOPIC_NAME = process.env.seng4400a2_TOPIC_NAME;
 const timerTrigger = function (context, myTimer) {
     return __awaiter(this, void 0, void 0, function* () {
         context.log('max prime: ', MAX_NUMBER);
-        let RngMax = 1000000;
-        if (!isNaN(MAX_NUMBER)) {
+        let RngMax = MAX_NUMBER;
+        if (isNaN(MAX_NUMBER)) {
             context.log('Invalid max input, reverting to default');
-            RngMax = MAX_NUMBER;
+            RngMax = 1000000;
         }
         const sbClient = new service_bus_1.ServiceBusClient(CONNECTION_STRING);
         const sender = sbClient.createSender(TOPIC_NAME);
