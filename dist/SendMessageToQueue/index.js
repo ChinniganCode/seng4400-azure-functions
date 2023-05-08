@@ -8,16 +8,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 const service_bus_1 = require("@azure/service-bus");
+const MAX_NUMBER = (_b = parseInt((_a = process.env) === null || _a === void 0 ? void 0 : _a.PRIME_MAX)) !== null && _b !== void 0 ? _b : 1000000;
+const CONNECTION_STRING = process.env.seng4400a2_SERVICEBUS;
+const TOPIC_NAME = process.env.seng4400a2_TOPIC_NAME;
 const timerTrigger = function (context, myTimer) {
     return __awaiter(this, void 0, void 0, function* () {
-        const CONNECTION_STRING = "Endpoint=sb://seng4400-a2.servicebus.windows.net/;SharedAccessKeyName=rng-queue-sender;SharedAccessKey=nnvDpd5EHrrSGRO5niW9gntTrT0pXrfPr+ASbP48h4A=;EntityPath=rng-queue";
-        const TOPIC_NAME = "rng-queue";
-        const MAX_NUMBER = 1000000;
+        context.log('max prime: ', MAX_NUMBER);
+        let RngMax = 1000000;
+        if (!isNaN(MAX_NUMBER)) {
+            context.log('Invalid max input, reverting to default');
+            RngMax = MAX_NUMBER;
+        }
         const sbClient = new service_bus_1.ServiceBusClient(CONNECTION_STRING);
         const sender = sbClient.createSender(TOPIC_NAME);
-        const number = Math.floor(Math.random() * MAX_NUMBER) + 1;
+        const number = Math.floor(Math.random() * RngMax) + 1;
         const payload = { question: number.toString() };
         context.log(`Publishing number ${number} to topic ${TOPIC_NAME}`);
         yield sender.sendMessages({ body: payload });

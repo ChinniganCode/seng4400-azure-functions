@@ -3,6 +3,9 @@
   "Values": {
     "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=sendmessagequeueste2971c;AccountKey=OeUAdP1JD8WNmh2+OuhEkgqSIeeZqF+rvHTwQI0We0JRe0rwo+dEKqWzb9Y9b7kz6xdXE6cqk0Hx+AStlK9uWg==;EndpointSuffix=core.windows.net",
     "FUNCTIONS_WORKER_RUNTIME": "node",
-    "seng4400a2_SERVICEBUS": "Endpoint=sb://seng4400-a2.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=PSxCSUKffRiNIDlyMXcy+N70FZhxLO0kQ+ASbMnXODo="
+    "PRIME_MAX" : "1000",
+    "RECIEVER_HOST_NAME" : "seng4400dashboard.azurewebsites.net",
+    "seng4400a2_SERVICEBUS": "Endpoint=sb://seng4400-a2.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=PSxCSUKffRiNIDlyMXcy+N70FZhxLO0kQ+ASbMnXODo=",
+    "seng4400a2_TOPIC_NAME": "rng-queue"
   }
 }

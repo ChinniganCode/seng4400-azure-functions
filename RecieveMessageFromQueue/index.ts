@@ -19,21 +19,23 @@ function calculatePrimes(max): number[] {
 
     return primes;
   }
-  
 
 const serviceBusQueueTrigger: AzureFunction = async function(context: Context, mySbMsg: any): Promise<void> {
-    var hrstart = process.hrtime()
+
+  //start timer
+    var hrStart = process.hrtime()
     context.log(mySbMsg);
     const ans = calculatePrimes(mySbMsg.question);
-    var hrend = process.hrtime(hrstart);
+  //end timer
+    var hrEnd = process.hrtime(hrStart);
     const payload = 
     {
         answer: ans,
-        time_taken: Math.floor(hrend[1] / 1000000)
+        time_taken: Math.floor(hrEnd[1] / 1000000)
     }
     context.log(payload);
     const options = {
-        hostname: 'seng4400dashboard.azurewebsites.net',
+        hostname: process.env.RECIEVER_HOST_NAME,
         path: '/',
         method: 'POST',
         headers: {
