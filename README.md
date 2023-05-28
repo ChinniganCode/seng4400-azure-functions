@@ -31,6 +31,9 @@ There is also a JetBrains plugin, but I haven't tested it, your mileage may vary
 
 Deploying to Azure: 
 
+By far the easiest way to deploy this code is by the VSCode Azure plugin, whereby you just go into Azure sidetab, go to workspace, select 'Deploy to Function App' and enter the Function App you created in the Azure Portal. Azure should then handle the rest. With that being said, there are a few more options: 
+
+
 - The code for both sections was deployed via an Azure Functions App. I deployed them via VSCode, alternatively you could chose another CI/CD deployment solution such as Github Actions or DevOps. 
 - I ran the service on Node.js 18 LTS on a Windows Machine, with the Serverless hosting option 
 
@@ -61,5 +64,4 @@ Where <deployment_user> is your azure username. Authentication credentials can b
 - https://learn.microsoft.com/en-us/azure/app-service/deploy-configure-credentials?tabs=portal#userscope
 
 
-By far the easiest way to deploy this code is by the VSCode Azure plugin, whereby you just
-go into Azure sidetab,  go to workspace, select 'Deploy to Function App' and enter the Function App you created 
+By far the easiest way to deploy this code is by the VSCode Azure plugin, whereby you just go into Azure sidetab, go to workspace, select 'Deploy to Function App' and enter the Function App you created in the Azure Portal. Azure should then handle the rest.
