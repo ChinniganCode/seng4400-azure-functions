@@ -59,3 +59,7 @@ curl -u <deployment_user> https://<app_name>.scm.azurewebsites.net/api/deploymen
 
 Where <deployment_user> is your azure username. Authentication credentials can be found via a few different methods: 
 - https://learn.microsoft.com/en-us/azure/app-service/deploy-configure-credentials?tabs=portal#userscope
+
+
+By far the easiest way to deploy this code is by the VSCode Azure plugin, whereby you just
+go into Azure sidetab,  go to workspace, select 'Deploy to Function App' and enter the Function App you created 
