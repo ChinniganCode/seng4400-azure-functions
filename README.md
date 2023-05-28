@@ -36,7 +36,6 @@ Deploying to Azure:
 
 - Enable public access in the configuration. 
 
-
 Deployment via a ZIP file.
 
 Option 1 (Azure CLI):
