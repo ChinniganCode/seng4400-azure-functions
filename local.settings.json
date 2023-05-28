@@ -6,6 +6,7 @@
     "PRIME_MAX" : "1000000",
     "RECIEVER_HOST_NAME" : "seng4400dashboard.azurewebsites.net",
     "seng4400a2_SERVICEBUS": "Endpoint=sb://seng4400-a2.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=PSxCSUKffRiNIDlyMXcy+N70FZhxLO0kQ+ASbMnXODo=",
-    "seng4400a2_TOPIC_NAME": "rng-queue"
+    "seng4400a2_TOPIC_NAME": "rng-queue",
+    "CRON_SCHEDULE": "*/5 * * * * *"
   }
 }

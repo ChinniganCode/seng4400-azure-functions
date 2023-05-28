@@ -18,6 +18,7 @@ const timerTrigger = function (context, myTimer) {
     return __awaiter(this, void 0, void 0, function* () {
         context.log('max prime: ', MAX_NUMBER);
         let RngMax = MAX_NUMBER;
+        context.log(myTimer);
         if (isNaN(MAX_NUMBER)) {
             context.log('Invalid max input, reverting to default');
             RngMax = 1000000;

@@ -7,6 +7,7 @@ const TOPIC_NAME = process.env.seng4400a2_TOPIC_NAME;
 const timerTrigger: AzureFunction = async function (context: Context, myTimer: any): Promise<void> {
     context.log('max prime: ', MAX_NUMBER);
     let RngMax = MAX_NUMBER;
+    context.log(myTimer);
     if(isNaN(MAX_NUMBER)) {
         context.log('Invalid max input, reverting to default');
         RngMax = 1000000
